@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TopController::class, 'index']);
+// // portfolio top
+// Route::get('/', [TopController::class, 'index']);
+// // search music
+// Route::get('/', [TopController::class, 'index']);
+// // search user
+// Route::get('/', [TopController::class, 'index']);
+// // user detail
+// Route::get('/', [TopController::class, 'index']);
+// // simple login
+// Route::get('/', [TopController::class, 'index']);
+// // add favorite
+// Route::get('/', [TopController::class, 'index']);
+// // del favorite
+// Route::get('/', [TopController::class, 'index']);
