@@ -1,14 +1,25 @@
+# libraries
 /node_modules
+/vendor
+
+# public dirs
 /public/hot
 /public/storage
+/public/css
+/public/jss
+
 /storage/*.key
-/vendor
+
+# env
 .env
 .env.backup
+
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+# code editor
 /.idea
 /.vscode
