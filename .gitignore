@@ -2,24 +2,29 @@
 /node_modules
 /vendor
 
-# public dirs
+# public dirß
 /public/hot
 /public/storage
 /public/css
-/public/jss
+/public/js
+public/mix-manifest.json
 
+# storage dir
 /storage/*.key
 
 # env
 .env
 .env.backup
 
+# config etc
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+.DS_Store
 
 # code editor
 /.idea
 /.vscode
+

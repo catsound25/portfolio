@@ -1,0 +1,48 @@
+// reset
+@use 'modern-css-reset/src/reset';
+
+// Variables
+@use 'variables';
+
+@use 'footer';
+@use 'header';
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.body {
+  background-color: #2C3134;
+  min-height: 100vh;
+  display: grid;
+  grid-template:
+    "... ...... ..."
+    "... header ..." 100px
+    "... ...... ..." 20px
+    "...  main  ..." 1fr
+    "... ...... ..." 20px
+    "... footer ..." 100px
+    "... ...... ..."
+    / auto 1fr auto;
+}
+
+// メインコンテンツ
+.main {
+  grid-area: main;
+  color: #fff;
+  padding: 0 50px;
+}
+
+// パーツ
+%heading,
+.heading {
+  font-weight: normal;
+  font-size: 30px;
+  text-align: center;
+
+  &--sub {
+    @extend %heading;
+    // font-size: 20px;
+  }
+}
