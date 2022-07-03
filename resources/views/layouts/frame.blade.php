@@ -16,7 +16,7 @@
         {{-- ヘッダー --}}
         <header class="p-2 mb-5 header">
             <a href="{{ route('top') }}" class="d-flex align-items-center text-dark text-decoration-none">
-                <span class="fs-4">catsound25's Site</span>
+                <span class="fs-4 text-white">catsound25's Site</span>
             </a>
         </header>
 

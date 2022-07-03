@@ -1,6 +1,8 @@
 <header class="header">
     <div class="header__left">
-        <h1 class="header__title"><a href="{{ route('search_music') }}">Spotifyお気に入り登録</a></h1>
+        <h1 class="header__title">
+            <a href="{{ route('search_music') }}"><span class="accent">Spotify</span>楽曲お気に入り登録</a>
+        </h1>
     </div>
     <div class="header__right">
         <p class="header__txt">＊＊＊でログイン中</p>

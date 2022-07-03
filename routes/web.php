@@ -16,10 +16,15 @@ use App\Http\Controllers as Ctl;
 
 // トップページ
 Route::get('/', [Ctl\TopController::class, 'index'])->name('top');
-// 楽曲検索(Portfolio Top)
+
+// 楽曲検索(Portfolio Top) 初期表示
 Route::get('/pf/search_music', [Ctl\SearchMusicController::class, 'index'])->name('search_music');
+// 楽曲検索(Portfolio Top) 検索
+Route::post('/pf/search_music', [Ctl\SearchMusicController::class, 'search'])->name('search_music.search');
+
 // ユーザー一覧
 Route::get('/pf/user_list', [Ctl\UserListController::class, 'index'])->name('user_list');
+
 // ユーザー詳細
 Route::get('/pf/user_detail', [Ctl\UserDetailController::class, 'index'])->name('user_detail');
 

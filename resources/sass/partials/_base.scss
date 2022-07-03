@@ -4,8 +4,8 @@
 // Variables
 @use 'variables';
 
-@use 'footer';
 @use 'header';
+@use 'footer';
 
 a {
   text-decoration: none;
@@ -19,9 +19,9 @@ a {
   grid-template:
     "... ...... ..."
     "... header ..." 100px
-    "... ...... ..." 20px
+    "... ...... ..." 100px
     "...  main  ..." 1fr
-    "... ...... ..." 20px
+    "... ...... ..." 100px
     "... footer ..." 100px
     "... ...... ..."
     / auto 1fr auto;
