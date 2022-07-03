@@ -1,0 +1,12 @@
+// フッター
+.footer {
+  grid-area: footer;
+  background: #000;
+  text-align: center;
+
+  &__text {
+    color: #fff;
+    line-height: 100px;
+  }
+
+}

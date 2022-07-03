@@ -1,0 +1,35 @@
+// base
+@use 'partials/base';
+
+// .userlist {}
+
+.list {
+  // border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    margin-bottom: 20px;
+  }
+}
+
+.prof {
+  display: flex;
+  gap: 20px;
+
+  &_nameinfo {
+    width: 300px;
+    text-align: center;
+
+    &__img {
+      border-radius: 50%;
+    }
+  }
+
+  &_desc {
+    word-break: break-all;
+    width: 600px;
+  }
+}

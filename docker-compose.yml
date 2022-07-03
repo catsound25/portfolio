@@ -1,6 +1,7 @@
 # For more information: https://laravel.com/docs/sail
 version: '3'
 services:
+    # WEBサーバーのコンテナ
     laravel.test:
         build:
             context: ./vendor/laravel/sail/runtimes/8.1
@@ -27,6 +28,8 @@ services:
             - redis
             - meilisearch
             - selenium
+
+    # DBサーバーのコンテナ
     mysql:
         image: 'mysql/mysql-server:8.0'
         ports:
@@ -47,6 +50,8 @@ services:
             test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}"]
             retries: 3
             timeout: 5s
+
+    # Redisのコンテナ
     redis:
         image: 'redis:alpine'
         ports:
@@ -59,6 +64,8 @@ services:
             test: ["CMD", "redis-cli", "ping"]
             retries: 3
             timeout: 5s
+
+    # 全文検索エンジンサーバーのコンテナ
     meilisearch:
         image: 'getmeili/meilisearch:latest'
         ports:
@@ -71,6 +78,8 @@ services:
             test: ["CMD", "wget", "--no-verbose", "--spider",  "http://localhost:7700/health"]
             retries: 3
             timeout: 5s
+
+    # メールサーバーのコンテナ
     mailhog:
         image: 'mailhog/mailhog:latest'
         ports:
@@ -78,12 +87,16 @@ services:
             - '${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025'
         networks:
             - sail
+
+    # セレニウムのコンテナ
     selenium:
         image: 'selenium/standalone-chrome'
         volumes:
             - '/dev/shm:/dev/shm'
         networks:
             - sail
+
+    # DB GUIツールのコンテナ
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         links:
@@ -91,8 +104,6 @@ services:
         ports:
             - 8888:80
         environment:
-            #PMA_USER: "${DB_USERNAME}"
-            #PMA_PASSWORD: "${DB_PASSWORD}"
             PMA_HOST: mysql
         networks:
             - sail
