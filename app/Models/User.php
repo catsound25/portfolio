@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'desc'
     ];
 
     /**
@@ -41,4 +42,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // 関連テーブル
+    public function favorite()
+    {
+        return $this->hasMany('App\Models\Favorite');
+    }
 }

@@ -2,13 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserDetailController extends Controller
 {
-    //
-    public function index(Request $req)
-    {    
-        return view('user-detail');
+    /**
+     * 初期表示
+     *
+     * @param $id
+     * @param Request $req
+     * @return void
+     */
+    public function index($id, Request $req)
+    {
+        $user = User::find($id);
+        return view('user-detail', compact('user'));
+    }
+
+    /**
+     * プロフィール編集
+     *
+     * @param $id
+     * @param Request $req
+     * @return void
+     */
+    public function edit($id, Request $req)
+    {
+        User::find($id)->update([
+            'desc' => $req->profile,
+        ]);
+
+        return redirect()
+            ->route('user_detail', ['id' => auth()->user()->id])
+            ->with(['suc_msg' => 'プロフィールを更新しました。']);
     }
 }
