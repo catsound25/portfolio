@@ -8,24 +8,24 @@
     </x-slot>
 
     <main class="main userlist">
-        <h2>ユーザー一覧</h2>
+        <h2 class="heading--sub">ユーザー一覧</h2>
         <section class="list">
-            @for ($i = 0; $i < 10; $i++)
+            @foreach ($users as $u)
                 <div class="list__item">
                     <div class="prof">
                         <div class="prof_nameinfo">
-                            <a href="{{ route('user_detail') }}" class="user__detailbtn">
-                                <img class="prof_nameinfo__img" src="/img/300x300.png" alt="ユーザー画像" width="300"
-                                    height="300" />
-                                <p class="prof_nameinfo__name">ユーザー名</p>
+                            <a href="{{ route('user_detail', ['id' => $u->id]) }}" class="user__detailbtn">
+                                <img class="prof_nameinfo__img" src="/img/user{{ $u->id }}.png" alt="ユーザー画像"
+                                    width="300" height="300" />
+                                <p class="prof_nameinfo__name">{{ $u->name }}</p>
                             </a>
                         </div>
                         <div class="prof_desc">
-                            <p class="prof_desc__txt">自己紹介文ああああああああああああああああああああああああああああああああ</p>
+                            <p class="prof_desc__txt">{{ $u->desc }}</p>
                         </div>
                     </div>
                 </div>
-            @endfor
+            @endforeach
         </section>
     </main>
 </x-layout>

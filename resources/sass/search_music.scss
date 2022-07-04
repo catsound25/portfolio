@@ -35,10 +35,10 @@
   display: grid;
   grid-template:
     " img   ... title " 1fr
-    " img   ... artist" 2fr
-    " img   ... fav   " 40px
+    " img   ... artist" 1fr
     / 300px 10px 1fr;
   width: 48%;
+  position: relative;
 
   &__img {
     grid-area: img;
@@ -47,16 +47,39 @@
   &__title {
     word-break: break-all;
     grid-area: title;
+    font-size: 30px;
   }
 
   &__artist {
     word-break: break-all;
     grid-area: artist;
+    font-size: 18px;
   }
 
+  // お気に入り
   &__fav {
     grid-area: fav;
     cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    background: #1FDF64;
+    border-radius: 15px;
+    border: none;
+
+    &:before {
+      content: '';
+      background: url(/img/star.svg) no-repeat 0 0;
+      position: absolute;
+      background-size: contain;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      bottom: 0;
+      left: 0;
+    }
 
     img {
       width: 100%;

@@ -11,7 +11,7 @@
 
   &__item {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 }
 
@@ -25,6 +25,12 @@
 
     &__img {
       border-radius: 50%;
+      background-color: white;
+    }
+
+    &__name {
+      font-size: 20px;
+      font-weight: bold;
     }
   }
 

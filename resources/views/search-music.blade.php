@@ -7,9 +7,13 @@
         <link rel="stylesheet" href="{{ asset('css/search_music.css') }}">
     </x-slot>
 
+    <x-slot name="js">
+        <script src="{{ mix('js/app.js') }}"></script>
+    </x-slot>
+
     <main class="main searchmusic">
         <section class="search">
-            <h2 class="heading--sub">曲を検索してみましょう</h2>
+            <h2 class="heading--sub">Search</h2>
             <div class="search__inner">
                 <form action="{{ route('search_music.search') }}" method="post">
                     @csrf
@@ -18,11 +22,13 @@
                 </form>
             </div>
         </section>
+        {{-- {{ dd(auth()->user()->favorite) }} --}}
         @isset($tracks)
             <section class="search-result">
                 <h2 class="heading--sub">Result</h2>
                 <div class="search-result__list">
                     @forelse ($tracks['items'] as $t)
+                        {{-- {{ dd($t) }} --}}
                         <div class="card">
                             <img class="card__img" src="{{ $t['album']['images'][1]['url'] }}" alt=""
                                 width="300" height="300" />
@@ -32,7 +38,9 @@
                                     {{ $artist['name'] }}
                                 @endforeach
                             </p>
-                            <button class="card__fav"><img src="/img/star.svg" alt=""></button>
+                            @auth
+                                <button class="card__fav js-fav off" data-song-id="{{ $t['id'] }}"></button>
+                            @endauth
                         </div>
                     @empty
                         <p>該当する曲が見つかりませんでした</p>
