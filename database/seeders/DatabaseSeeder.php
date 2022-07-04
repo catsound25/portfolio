@@ -16,7 +16,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // ゲストユーザー
-        \App\Models\User::factory(1)->create();
+        \App\Models\User::create([
+            'name' => 'ゲストユーザー1',
+            'email' => config('const.guest.mail'),
+            'email_verified_at' => now(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'remember_token' => Str::random(10),
+            'desc' => 'プロフィールです'
+        ]);
 
         // 個別ユーザー
         \App\Models\User::create([
