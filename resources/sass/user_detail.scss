@@ -14,13 +14,12 @@
     / auto 2fr 30px 1fr auto;
 }
 
-.headding__wrapper {
+.heading__wrapper {
   grid-area: head;
 }
 
 .prof {
   grid-area: prof;
-
 }
 
 .prof {
@@ -79,6 +78,8 @@
 
 .favs {
   grid-area: favs;
+  max-height: 826px;
+  overflow-y: scroll;
 }
 
 .card {
@@ -88,6 +89,7 @@
     " img   ...  artist" 2fr
     / 300px 10px 1fr;
   position: relative;
+  margin-bottom: 20px;
 
   &__img {
     grid-area: img;
@@ -109,13 +111,34 @@
     left: 5px;
     width: 50px;
     height: 50px;
-    background: #1FDF64;
-    border-radius: 15px;
+    background: #2C3134;
+    border-radius: 5px;
     border: none;
 
-    img {
-      width: 100%;
-      height: 100%;
+    &:before {
+      content: '';
+      background: url(/img/star_off.svg) no-repeat 0 0;
+      position: absolute;
+      background-size: contain;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      bottom: 0;
+      left: 0;
+    }
+
+    &.on {
+      &:before {
+        content: '';
+        background: url(/img/star_on.svg) no-repeat 0 0;
+        position: absolute;
+        background-size: contain;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        bottom: 0;
+        left: 0;
+      }
     }
   }
 }

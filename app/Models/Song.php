@@ -13,6 +13,7 @@ class Song extends Model
         'track_id',
         'title',
         'artist',
+        'img',
     ];
 
     // 関連テーブル

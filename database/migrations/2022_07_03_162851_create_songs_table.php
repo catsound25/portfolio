@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('track_id'); // Spotify側の楽曲ID
             $table->string('title');
             $table->string('artist');
+            $table->string('img');
             $table->timestamps();
         });
     }

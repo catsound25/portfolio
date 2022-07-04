@@ -36,6 +36,7 @@ class FavoriteController extends Controller
                 'track_id' => $id,
                 'title' => $track['name'],
                 'artist' => implode(' ', $artists),
+                'img' => $track['album']['images'][1]['url']
             ]);
         }
 

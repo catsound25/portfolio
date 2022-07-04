@@ -12,6 +12,7 @@
     </x-slot>
 
     <main class="main searchmusic">
+        {{-- 検索条件 --}}
         <section class="search">
             <h2 class="heading--sub">Search</h2>
             <div class="search__inner">
@@ -22,24 +23,25 @@
                 </form>
             </div>
         </section>
-        {{-- {{ dd(auth()->user()->favorite) }} --}}
+
+        {{-- 検索結果 --}}
         @isset($tracks)
             <section class="search-result">
                 <h2 class="heading--sub">Result</h2>
                 <div class="search-result__list">
                     @forelse ($tracks['items'] as $t)
-                        {{-- {{ dd($t) }} --}}
                         <div class="card">
                             <img class="card__img" src="{{ $t['album']['images'][1]['url'] }}" alt=""
                                 width="300" height="300" />
                             <p class="card__title">{{ $t['name'] }}</p>
                             <p class="card__artist">
                                 @foreach ($t['artists'] as $artist)
-                                    {{ $artist['name'] }}
+                                    {{ $artist['name'] . ' ' }}
                                 @endforeach
                             </p>
                             @auth
-                                <button class="card__fav js-fav off" data-song-id="{{ $t['id'] }}"></button>
+                                <button class="card__fav js-fav {{ Utility::favTrack($t['id']) }}"
+                                    data-song-id="{{ $t['id'] }}"></button>
                             @endauth
                         </div>
                     @empty

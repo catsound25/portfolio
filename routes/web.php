@@ -27,14 +27,14 @@ Route::get('/pf/user_list', [Ctl\UserListController::class, 'index'])->name('use
 
 // ユーザー詳細
 Route::get('/pf/user_detail/{id}', [Ctl\UserDetailController::class, 'index'])->name('user_detail');
-// edit profile
+// プロフィール編集
 Route::post('/pf/user_detail/{id}/edit_profile', [Ctl\UserDetailController::class, 'edit'])->name('edit_profile');
 
-// ヘッダー簡単ログイン
+// 簡単ログイン
 Route::get('/pf/login', [Ctl\Auth\LoginController::class, 'easyAuthenticate'])->name('auth.login');
 Route::get('/pf/logout', [Ctl\Auth\LoginController::class, 'logout'])->name('auth.logout');
 
-// add favorite
+// お気に入り登録
 Route::post('/pf/fav/{id}', [Ctl\FavoriteController::class, 'regist'])->name('regist_fav');
-// del favorite
-Route::delete('/pf/fav/{id}', [Ctl\FavoriteController::class, 'delete'])->name('del_fav');
+// お気に入り解除 未実装
+// Route::delete('/pf/fav/{id}', [Ctl\FavoriteController::class, 'delete'])->name('del_fav');

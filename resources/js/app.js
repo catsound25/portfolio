@@ -14,18 +14,19 @@ $(function () {
 
     let data = {};
     if ($(this).hasClass('on')) {
-      // お気に入り中だった場合、解除する
-      data["_method"] = "DELETE";
+      // // お気に入り中だった場合、解除する
+      // data["_method"] = "DELETE";
+      return false;
     }
 
     $.ajax({
       url: "/pf/fav/" + songId,
       type: "POST",
-      data
+      data: data,
+      context: this
     })
       .done(function (res) {
-        console.log(res);
-        alert('ok');
+        $(this).addClass('on');
       })
 
       .fail(function (err) {
