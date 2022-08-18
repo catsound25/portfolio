@@ -29,12 +29,12 @@ class FavoriteController extends Controller
 
         // 楽曲登録
         $song = Song::where('track_id', $id)->first();
-        if (!isset($song)) {
+        if (! isset($song)) {
             $song = Song::create([
                 'track_id' => $id,
                 'title' => $track['name'],
                 'artist' => implode(' ', $artists),
-                'img' => $track['album']['images'][1]['url']
+                'img' => $track['album']['images'][1]['url'],
             ]);
         }
 

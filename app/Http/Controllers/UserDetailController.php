@@ -17,6 +17,7 @@ class UserDetailController extends Controller
     public function index($id, Request $req)
     {
         $user = User::find($id);
+
         return view('user-detail', compact('user'));
     }
 

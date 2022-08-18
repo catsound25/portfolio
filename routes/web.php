@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers as Ctl;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------

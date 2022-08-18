@@ -14,7 +14,6 @@ class Favorite extends Model
         'user_id',
     ];
 
-
     // 関連テーブル
     public function user()
     {

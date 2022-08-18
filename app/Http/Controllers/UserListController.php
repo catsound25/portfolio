@@ -16,6 +16,7 @@ class UserListController extends Controller
     public function index(Request $req)
     {
         $users = User::all();
+
         return view('user-list', compact('users'));
     }
 }
