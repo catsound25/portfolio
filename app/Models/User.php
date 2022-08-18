@@ -43,7 +43,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // 関連テーブル
+    /**
+     * お気に入りテーブル
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function favorite()
     {
         return $this->hasMany('App\Models\Favorite');

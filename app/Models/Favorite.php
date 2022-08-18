@@ -20,6 +20,12 @@ class Favorite extends Model
     {
         return $this->belongsTo('App\Models\User', 'user_id');
     }
+
+    /**
+     * お気に入りテーブル
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function song()
     {
         return $this->belongsTo('App\Models\Song', 'song_id');

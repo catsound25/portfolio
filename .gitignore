@@ -2,7 +2,7 @@
 /node_modules
 /vendor
 
-# public dirß
+# public dir
 /public/hot
 /public/storage
 /public/css
@@ -23,6 +23,8 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 .DS_Store
+/_ide_helper.php
+/_ide_helper_models.php
 
 # code editor
 /.idea

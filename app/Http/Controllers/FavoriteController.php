@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Favorite;
 use App\Models\Song;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Spotify;
 
 class FavoriteController extends Controller
@@ -16,7 +14,7 @@ class FavoriteController extends Controller
      *
      * @param $id
      * @param Request $req
-     * @return void
+     * @return \Illuminate\Http\Response
      */
     public function regist($id, Request $req)
     {
@@ -30,7 +28,7 @@ class FavoriteController extends Controller
         }
 
         // 楽曲登録
-        $song = Song::all()->where('track_id', $id)->first();
+        $song = Song::where('track_id', $id)->first();
         if (!isset($song)) {
             $song = Song::create([
                 'track_id' => $id,
@@ -54,7 +52,7 @@ class FavoriteController extends Controller
      *
      * @param $id
      * @param Request $req
-     * @return void
+     * @return \Illuminate\Http\Response
      */
     public function delete($id, Request $req)
     {

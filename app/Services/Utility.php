@@ -7,7 +7,7 @@ class Utility
     /**
      * お気に入り曲であるか
      *
-     * @param int $id
+     * @param string $trackId
      * @return string お気に入りの場合、on
      */
     public static function favTrack($trackId)

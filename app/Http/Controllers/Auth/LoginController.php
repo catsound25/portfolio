@@ -11,8 +11,8 @@ class LoginController extends Controller
     /**
      * 簡単ログイン
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request  $req
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function easyAuthenticate(Request $req)
     {
@@ -36,7 +36,7 @@ class LoginController extends Controller
      * ユーザーをアプリケーションからログアウトさせる
      *
      * @param  \Illuminate\Http\Request  $req
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function logout(Request $req)
     {

@@ -11,7 +11,7 @@ class UserListController extends Controller
      * 初期表示
      *
      * @param Request $req
-     * @return void
+     * @return \Illuminate\Contracts\View\View
      */
     public function index(Request $req)
     {

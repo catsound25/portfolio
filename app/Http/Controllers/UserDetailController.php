@@ -12,7 +12,7 @@ class UserDetailController extends Controller
      *
      * @param $id
      * @param Request $req
-     * @return void
+     * @return \Illuminate\Contracts\View\View
      */
     public function index($id, Request $req)
     {
@@ -25,7 +25,7 @@ class UserDetailController extends Controller
      *
      * @param $id
      * @param Request $req
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function edit($id, Request $req)
     {
