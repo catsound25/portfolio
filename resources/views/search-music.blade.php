@@ -14,11 +14,20 @@
     <main class="main searchmusic">
         {{-- 検索条件 --}}
         <section class="search">
-            <h2 class="heading--sub">Search</h2>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+            <h2 class="heading--sub">曲名や曲名の一部を入力してください</h2>
             <div class="search__inner">
                 <form action="{{ route('search_music.search') }}" method="post">
                     @csrf
-                    <input class="search__input" type="text" name="search_txt" placeholder="曲名や曲名のキーワードを入力 ex.炎 真夜中">
+                    <input class="search__input" type="text" name="search_txt" placeholder="ex.炎 真夜中">
                     <button class="search__btn" type="submit">検索</button>
                 </form>
             </div>
@@ -27,7 +36,6 @@
         {{-- 検索結果 --}}
         @isset($tracks)
             <section class="search-result">
-                <h2 class="heading--sub">Result</h2>
                 <div class="search-result__list">
                     @forelse ($tracks['items'] as $t)
                         <div class="card">

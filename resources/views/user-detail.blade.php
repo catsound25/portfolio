@@ -13,6 +13,15 @@
             @if (session('suc_msg'))
                 <p class="success__txt">{{ session('suc_msg') }}</p>
             @endif
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
         </div>
         <section class="prof">
             <div class="prof_nameinfo">
@@ -33,10 +42,8 @@
                 @endif
             </div>
         </section>
-        <section class="graph">
-            <p>趣向グラフ(未実装)</p>
-        </section>
         <section class="favs">
+            <h3>お気に入り</h3>
             @forelse ($user->favorite as $f)
                 <div class="card">
                     <img class="card__img" src="{{ $f->song->img }}" alt="アルバム画像" width="300" height="300" />

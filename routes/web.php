@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // トップページ
-Route::get('/', [Ctl\TopController::class, 'index'])->name('top');
+Route::get('/', [Ctl\SearchMusicController::class, 'index'])->name('top');
 
 // 楽曲検索(Portfolio Top) 初期表示
 Route::get('/pf/search_music', [Ctl\SearchMusicController::class, 'index'])->name('search_music');

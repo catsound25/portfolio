@@ -10,6 +10,15 @@
     <main class="main userlist">
         <h2 class="heading heading--sub">ユーザー一覧</h2>
         <section class="list">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             @foreach ($users as $u)
                 <div class="list__item">
                     <div class="prof">
