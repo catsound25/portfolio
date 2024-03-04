@@ -22,7 +22,7 @@ Route::get('/pf/search_music', [Ctl\SearchMusicController::class, 'index'])->nam
 // 楽曲検索(Portfolio Top) 検索
 Route::post('/pf/search_music', [Ctl\SearchMusicController::class, 'search'])->name('search_music.search');
 
-// ユーザー一覧 初期表示 初期表示
+// ユーザー一覧 初期表示
 Route::get('/pf/user_list', [Ctl\UserListController::class, 'index'])->name('user_list');
 
 // ユーザー詳細

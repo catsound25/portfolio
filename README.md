@@ -33,15 +33,24 @@
 
 ## サンプル画像
 
-楽曲検索
+・楽曲検索
 
-| 初期 | 検索結果 | 検索結果（ログイン済みの場合） |
-| --- | --- | --- |
-| ![alt text](image.png) | ![alt text](image-1.png) | ![alt text](image-2.png) |
+初期
+![alt text](image.png)
 
-ユーザー一覧
+検索結果
+![alt text](image-1.png)
+
+検索結果（ログイン済みの場合）
+![alt text](image-2.png) |
+
+<br>
+
+・ユーザー一覧
 ![alt text](image-3.png)
 
-ユーザー詳細
+<br>
+
+・ユーザー詳細
 ![alt text](image-4.png)
 
